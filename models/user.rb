@@ -1,17 +1,28 @@
+require 'bcrypt'
 class User
+  include BCrypt
   include DataMapper::Resource
+
   property :id, Serial, :key => true
-  property :login, String, :key => true, :unique => true
-  property :password, String
-  property :salt, String
+  property :login, String, :key => true, :unique => true, :length => (3..40), :required => false
+  property :encrypted_password, String, :length => 60, :lazy => false
   property :status, Boolean, :default => false
   property :created_at, DateTime, :default => Time.now
   property :updated_at, DateTime , :default => Time.now 
+
+  validates_present :login, :encrypted_password
+  validates_is_unique :login
+
   has n, :hosts
-  
+
+  def password=(password)
+    self.encrypted_password = BCrypt::Password.create(password).to_s
+  end
+
   def self.authenticate(login, password)
-    self.first(:login => login)
+    u = User.first(:login => login)
+    return nil if u.nil?
+    return u if BCrypt::Password.new(u.encrypted_password) == password
+    nil
   end
 end
-
-
