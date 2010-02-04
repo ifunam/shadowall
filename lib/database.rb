@@ -5,7 +5,7 @@ module Database
    end
    
    def path
-     "sqlite3://#{Dir.pwd}/db/#{Config.database['name']}"
+     "sqlite3://#{Dir.pwd}/db/#{Config.database('name')}"
    end
 end
 include Database

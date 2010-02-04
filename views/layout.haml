@@ -1,0 +1,9 @@
+%html
+  %head
+    %title Captive Portal - IFUNAM
+    = stylesheet_link_tag "/stylesheets/base.css"
+  %body
+    = partial "header"
+    #main
+      =yield
+    = partial "footer"

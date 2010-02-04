@@ -3,4 +3,9 @@ database:
   
 site:
   name: Welcome to ShadoWall
-  host: http://www.yoursite.com
+  url: http://www.yoursite.com
+
+support:
+  email: nomail@nodomain.com
+  url: http://yourhelpdesk.com
+  phone: +52 55 1010101010101

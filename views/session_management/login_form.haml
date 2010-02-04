@@ -1,0 +1,10 @@
+%form{ :method => "post", :action => "/login"}
+  %fieldset
+    %p
+      %label Login:
+      %input{:id => "login", :name => "login", :type => "text", :size => 12}
+    %p
+      %label Password:
+      %input{:id => "password", :name => "password", :type => "password", :size => 12}
+  %fieldset{:class => 'buttons'}  
+    %input{:type => "submit", :value => "Enter"}

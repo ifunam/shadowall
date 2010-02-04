@@ -1,0 +1,7 @@
+%h2= 'Welcome!'
+%p
+  = image_tag('/images/unlock.png', :border => 0, :style => 'float: left;')
+  = 'The authentication process was succesful!, your internet connection has been activated.'
+%p
+  = link_to(Config.site('name'), Config.site('url')) + ' | '
+  = link_to('Google', 'http://www.google.com')
