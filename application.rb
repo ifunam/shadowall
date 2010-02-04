@@ -7,7 +7,7 @@ class Application < Sinatra::Default
   set :auth_login_template, 'application/index'
   set :auth_success_path, '/dashboard'
   set :back, '/dashboard'
-  
+  use Rack::Flash
   register Sinatra::Warden
   use Warden::Manager do |manager|
     manager.default_strategies :auth_db
