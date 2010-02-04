@@ -18,7 +18,7 @@ module Warden
 
       def authorizate!
         u = User.authenticate(params["login"], params["password"])
-        unless u.is_locked?
+        unless u.status?
           success!(u)
         else
           fail!("Could not authorize your accces attempt")
