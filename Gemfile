@@ -1,0 +1,8 @@
+gem 'sinatra'
+gem 'sqlite3-ruby'
+gem 'data_objects'
+gem 'dm-core'
+gem 'dm-types'
+gem 'do_sqlite3'
+gem 'thor', "0.12.3", :require_as => 'thor'
+gem 'rspec'

@@ -1,0 +1,6 @@
+database:
+  name: captive_portal.db
+  
+site:
+  name: Welcome to ShadoWall
+  host: http://www.yoursite.com
