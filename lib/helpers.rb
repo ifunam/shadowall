@@ -1,9 +1,9 @@
 module Sinatra
   include Config
   module ViewHelpers
-    def _haml(template, options={})
-      template = :"#{self.class.to_s.snake_case}/#{template}"
-      haml template, options
+    def myhaml(template, options={})
+       template = :"#{self.class.to_s.snake_case}/#{template}"
+       haml template, options
     end
 
     def partial(template, options={})

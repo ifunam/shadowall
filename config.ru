@@ -1,3 +1,3 @@
 require 'environment'
-require 'session_management'
-SessionManagement.run!
+require 'application'
+Application.run!
