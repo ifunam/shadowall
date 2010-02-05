@@ -4,18 +4,21 @@ A free sinatra application to implement a captive portal/firewall based on Packe
 
 == Downloading Shadowall
 
-$ git clone git://github.com/ifunam/shadowall.git
+  $ git clone git://github.com/ifunam/shadowall.git
 
 == Installation
 
-$ gem install bundle
-$ gem bundle
-$ ./bin/thor -T
-$ ./bin/thor setup:createdb
+  $ gem install bundle
+
+  $ gem bundle
+
+  $ ./bin/thor -T
+
+  $ ./bin/thor setup:createdb
 
 == Running
 
-$ sudo ruby config.ru
+  $ sudo ruby config.ru
 
 == NOTES
 
