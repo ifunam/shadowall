@@ -21,8 +21,9 @@ class User
 
   def self.authenticate(login, password)
     u = User.first(:login => login)
-    return nil if u.nil?
-    return u if BCrypt::Password.new(u.encrypted_password) == password
-    nil
+    if !u.nil? and BCrypt::Password.new(u.encrypted_password) == password
+       u.encrypted_password = nil
+       u
+    end
   end
 end
