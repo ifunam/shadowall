@@ -1,0 +1,12 @@
+%p= flash[:error] || flash[:success]
+#content_left
+  %p
+    = image_tag('/images/lock.png', :border => 0, :style => 'float: left;')
+    = 'Welcome!, You must use your login and password to access to Internet.'
+  %br
+  %p
+    = "ShadoWall is a project aimed at creating a simple embedded firewall based on Ruby, Sinatra, Packet Filter and FreeBSD/OpenBSD."
+ 
+#authentication
+  #form
+    = partial 'application/login'
