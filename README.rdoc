@@ -8,9 +8,7 @@ A free sinatra application to implement a captive portal/firewall based on Packe
 
 == Installation
 
-  $ gem install bundle
-
-  $ gem bundle
+  $ bundle install
 
   $ ./bin/thor -T
 
@@ -20,7 +18,15 @@ A free sinatra application to implement a captive portal/firewall based on Packe
 
   $ sudo ruby config.ru
 
-== NOTES
+== Requirements
+
+* Ruby Bundler (gem install bundle)
+* Sqlite3
+* OpenBSD or FreeBSD
+* Packet filter
+* Dhcpd
+
+== Notes
 
 * Shadowall depends on Packet Filter and DHCPD, see doc/examples files.
 * The deployment user needst privileges to use pfctl command, edit your

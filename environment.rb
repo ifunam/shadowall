@@ -1,6 +1,7 @@
-require File.dirname(__FILE__) + '/vendor/gems/environment'
-require 'extlib'
-Bundler.require_env
+require "rubygems"
+require "bundler"
+Bundler.setup
+Bundler.require(:default)
 Dir['lib/*.rb'].each{|lib| require lib }
 Dir['models/*.rb'].each{|lib| require lib}
 Database.connect

@@ -9,3 +9,7 @@ support:
   email: nomail@nodomain.com
   url: http://yourhelpdesk.com
   phone: +52 55 1010101010101
+
+dhcp:
+  file: /Users/alex/Projects/Ruby/shadowall/tmp/dhcpd.leases
+  backward: 7

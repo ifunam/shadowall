@@ -11,6 +11,10 @@ module Config
     get_conf('database')[key]
   end
 
+  def dhcp(key)
+    get_conf('dhcp')[key]
+  end
+
   private
   def load_config(file_name)
     YAML.load_file(File.join(File.dirname(__FILE__), "../#{file_name}"))
