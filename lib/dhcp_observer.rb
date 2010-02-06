@@ -38,7 +38,8 @@ class DhcpObserver
   end
 
   def self.save_host(h)
-    nic = Nic.first_or_create :mac_address => h[:mac_address]
-    Host.create(:ip_address => h[:ip_address], :nic_id => nic.id)
+    host = Host.new(:ip_address => h[:ip_address])
+    host.nic = Nic.first_or_create(:mac_address => h[:mac_address])
+    host.save
   end
 end

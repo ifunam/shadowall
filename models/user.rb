@@ -6,7 +6,7 @@ class User
   property :id, Serial, :key => true
   property :login, String, :key => true, :unique => true, :length => (3..40), :required => false
   property :encrypted_password, String, :length => 60, :lazy => false
-  property :status, Boolean, :default => false
+  property :enabled, Boolean, :default => true
   property :created_at, DateTime, :default => Time.now
   property :updated_at, DateTime , :default => Time.now 
 
@@ -21,7 +21,7 @@ class User
 
   def self.authenticate(login, password)
     u = User.first(:login => login)
-    if !u.nil? and u.status? and BCrypt::Password.new(u.encrypted_password) == password
+    if !u.nil? and u.enabled? and BCrypt::Password.new(u.encrypted_password) == password
        u.encrypted_password = nil
        u
     end
