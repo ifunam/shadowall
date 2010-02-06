@@ -9,7 +9,7 @@ class DhcpObserverDaemon < SimpleDaemon::Base
   end
 
   def self.stop
-    puts "Stopping processor  " 
+    puts "Stopping Dhcp Observer " 
   end
 end
 
