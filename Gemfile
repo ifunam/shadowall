@@ -4,7 +4,7 @@ gem 'sinatra'
 gem 'sinatra-static-assets', :require => 'sinatra/static_assets'
 gem 'rack-flash', :require => 'rack/flash'
 gem 'extlib'
-gem 'haml'
+gem 'haml', "2.2.19"
 gem 'bcrypt-ruby', "2.0.5", :require => 'bcrypt'
 gem 'warden'
 gem 'sinatra_warden'

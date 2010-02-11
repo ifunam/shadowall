@@ -1,11 +1,9 @@
-%p= flash[:error] || flash[:success]
-%div{:id => 'content_left', :class => 'span-14 prepend-5'}
+%form{ :method => "post", :action => "/login"}
   %p
-    = image_tag('/images/lock.png', :border => 0, :style => 'float: left;')
-    = 'Welcome!, You must use your login and password to access to Internet.'
-  %br
+    %label Login:
+    %input{:id => "login", :name => "login", :type => "text", :size => 12}
   %p
-    = "ShadoWall is a project aimed at creating a simple embedded firewall based on Ruby, Sinatra, Packet Filter and FreeBSD/OpenBSD."
-%div{:id => 'authentication', :class => 'span-7 prepend-4 last'}
-  #form
-    = partial 'application/login'
+    %label Password:
+    %input{:id => "password", :name => "password", :type => "password", :size => 12}
+  %p
+    %input{:type => "submit", :value => "Enter"}
