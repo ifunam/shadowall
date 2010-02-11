@@ -1,9 +1,12 @@
 %html
   %head
     %title ShadoWall
+    = stylesheet_link_tag '/stylesheets/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag '/stylesheets/print.css', :media => 'print'
     = stylesheet_link_tag "/stylesheets/base.css"
   %body
-    = partial "header"
-    #main
-      =yield
-    = partial "footer"
+    %div{:class =>'container'}
+      = partial "header"
+      %div{:id => 'main', :class => 'span-24 last'}
+        =yield
+      = partial "footer"

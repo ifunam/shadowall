@@ -1,9 +1,11 @@
 class Application < Sinatra::Default
   include Firewall
   use Rack::Flash
-  enable :static,  :methodoverride, :reload
+  # enable :static,  :methodoverride, :reload
   set :environment, :development
   set :app_file, __FILE__
+  set :root, File.dirname(__FILE__)
+  set :public, File.dirname(__FILE__) + '/public'
   # set :port, 80
 
   # Warden configuration
